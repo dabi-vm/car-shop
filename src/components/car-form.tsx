@@ -15,6 +15,9 @@ import {
 import type { SpecOption } from "@/store/rtk-query/car-types"
 
 export function CarForm() {
+  const [addToCart] = useAddToCartMutation()
+  const [removeFromCart] = useRemoveFromCartMutation()
+  const { data: cartItems = [] } = useGetCartQuery()
   const { data: bodyColorData, isLoading: bodyColorLoading } =
     useGetBodyColorOptionsQuery()
   const { data: paintTypeData, isLoading: paintTypeLoading } =
@@ -131,10 +134,6 @@ export function CarForm() {
             onSelect={(option) => handleSelect("wheelColor", option)}
           />
         </div>
-
-        {addError ? (
-          <Typography variant="muted">Could not add to cart.</Typography>
-        ) : null}
       </div>
     </section>
   )

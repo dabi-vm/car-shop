@@ -1,0 +1,39 @@
+{
+  "bodyColorOptions": [
+    { "value": "white", "label": "White", "price": 0 },
+    { "value": "black", "label": "Black", "price": 150 },
+    { "value": "silver", "label": "Silver", "price": 200 },
+    { "value": "gray", "label": "Gray", "price": 180 }
+  ],
+  "paintTypeOptions": [
+    { "value": "gloss", "label": "Gloss", "price": 0 },
+    { "value": "matte", "label": "Matte", "price": 800 },
+    { "value": "metallic", "label": "Metallic", "price": 450 }
+  ],
+  "windowTypeOptions": [
+    { "value": "standard", "label": "Standard Glass", "price": 0 },
+    { "value": "acoustic", "label": "Acoustic Glass", "price": 250 },
+    { "value": "laminated", "label": "Laminated Safety", "price": 400 }
+  ],
+  "windowTintOptions": [
+    { "value": "none", "label": "No Tint", "price": 0 },
+    { "value": "light", "label": "Light (70%)", "price": 120 },
+    { "value": "dark", "label": "Dark (20%)", "price": 220 }
+  ],
+  "wheelDesignOptions": [
+    { "value": "alloy-5-spoke", "label": "Alloy 5-Spoke", "price": 0 },
+    { "value": "alloy-mesh", "label": "Alloy Mesh", "price": 350 },
+    { "value": "multi-spoke", "label": "Multi-Spoke", "price": 500 }
+  ],
+  "wheelSizeOptions": [
+    { "value": "16", "label": "16\"", "price": 0 },
+    { "value": "17", "label": "17\"", "price": 200 },
+    { "value": "18", "label": "18\"", "price": 400 }
+  ],
+  "wheelColorOptions": [
+    { "value": "silver", "label": "Silver", "price": 0 },
+    { "value": "black", "label": "Black", "price": 150 },
+    { "value": "white", "label": "White", "price": 180 }
+  ],
+  "cart": []
+}

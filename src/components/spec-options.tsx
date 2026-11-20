@@ -19,14 +19,6 @@ export function SpecOptions({
   onSelect,
   value,
 }: SpecOptionsProps) {
-  const formatSpecPrice = (price: number) => {
-    if (price === 0) {
-      return "Included"
-    }
-
-    return `+$${price.toLocaleString()}`
-  }
-
   return (
     <RadioGroup
       name={name}
@@ -53,7 +45,7 @@ export function SpecOptions({
             <span className="grid min-w-0 gap-1">
               <Typography variant="option">{option.label}</Typography>
               <Typography variant="caption">
-                {formatSpecPrice(option.price)}
+                {`+$${option.price.toLocaleString()}`}
               </Typography>
             </span>
           </Label>

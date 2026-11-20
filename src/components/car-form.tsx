@@ -29,9 +29,9 @@ export function CarForm() {
     useGetWheelSizeOptionsQuery()
   const { data: wheelColorData, isLoading: wheelColorLoading } =
     useGetWheelColorOptionsQuery()
-  const { data: cartItems = [] } = useGetCartQuery()
-  const [addToCart, { error: addError }] = useAddToCartMutation()
-  const [removeFromCart] = useRemoveFromCartMutation()
+
+  const cartValue = (name: string) =>
+    cartItems.find((item) => item.name === name)?.value ?? ""
 
   const handleSelect = (name: string, option: SpecOption) => {
     const existingType = cartItems.find((item) => item.name === name)
@@ -61,6 +61,7 @@ export function CarForm() {
             name="bodyColor"
             options={bodyColorData}
             loading={bodyColorLoading}
+            value={cartValue("bodyColor")}
             onSelect={(option) => handleSelect("bodyColor", option)}
           />
         </div>
@@ -71,6 +72,7 @@ export function CarForm() {
             name="paintType"
             options={paintTypeData}
             loading={paintTypeLoading}
+            value={cartValue("paintType")}
             onSelect={(option) => handleSelect("paintType", option)}
           />
         </div>
@@ -81,6 +83,7 @@ export function CarForm() {
             name="windowType"
             options={windowTypeData}
             loading={windowTypeLoading}
+            value={cartValue("windowType")}
             onSelect={(option) => handleSelect("windowType", option)}
           />
         </div>
@@ -91,6 +94,7 @@ export function CarForm() {
             name="windowTint"
             options={windowTintData}
             loading={windowTintLoading}
+            value={cartValue("windowTint")}
             onSelect={(option) => handleSelect("windowTint", option)}
           />
         </div>
@@ -101,6 +105,7 @@ export function CarForm() {
             name="wheelDesign"
             options={wheelDesignData}
             loading={wheelDesignLoading}
+            value={cartValue("wheelDesign")}
             onSelect={(option) => handleSelect("wheelDesign", option)}
           />
         </div>
@@ -111,6 +116,7 @@ export function CarForm() {
             name="wheelSize"
             options={wheelSizeData}
             loading={wheelSizeLoading}
+            value={cartValue("wheelSize")}
             onSelect={(option) => handleSelect("wheelSize", option)}
           />
         </div>
@@ -121,6 +127,7 @@ export function CarForm() {
             name="wheelColor"
             options={wheelColorData}
             loading={wheelColorLoading}
+            value={cartValue("wheelColor")}
             onSelect={(option) => handleSelect("wheelColor", option)}
           />
         </div>

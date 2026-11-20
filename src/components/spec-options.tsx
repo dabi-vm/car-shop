@@ -3,13 +3,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Typography } from "@/components/ui/typography"
 import { type SpecOption } from "@/store/rtk-query/car-types"
 import { Loader2 } from "lucide-react"
-import { useState } from "react"
 
 type SpecOptionsProps = {
   name: string
   options?: SpecOption[]
   loading?: boolean
   onSelect?: (option: SpecOption) => void
+  value?: string
 }
 
 export function SpecOptions({
@@ -17,9 +17,8 @@ export function SpecOptions({
   options,
   loading,
   onSelect,
+  value,
 }: SpecOptionsProps) {
-  const [value, setValue] = useState("")
-
   const formatSpecPrice = (price: number) => {
     if (price === 0) {
       return "Included"
@@ -33,7 +32,6 @@ export function SpecOptions({
       name={name}
       value={value}
       onValueChange={(nextValue) => {
-        setValue(nextValue)
         const option = options?.find((item) => item.value === nextValue)
         if (option) {
           onSelect?.(option)

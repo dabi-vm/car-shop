@@ -3,10 +3,9 @@ import { ShoppingCartIcon, Trash2Icon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Typography } from "@/components/ui/typography"
-import {
-  useGetCartQuery,
-  useRemoveFromCartMutation,
-} from "@/store/rtk-query/car-api"
+import { removeFromCartRequested } from "@/store/cart/cart-slice"
+import { useAppDispatch } from "@/store/hooks"
+import { useGetCartQuery } from "@/store/rtk-query/car-api"
 
 const specLabels: Record<string, string> = {
   bodyColor: "Body Color",
@@ -19,8 +18,8 @@ const specLabels: Record<string, string> = {
 }
 
 export function CartPanel() {
+  const dispatch = useAppDispatch()
   const { data: items = [] } = useGetCartQuery()
-  const [removeFromCart] = useRemoveFromCartMutation()
 
   const subtotal = items.reduce((sum, item) => sum + item.price, 0)
 
@@ -64,7 +63,7 @@ export function CartPanel() {
                 size="icon-xs"
                 aria-label={`Remove ${item.label}`}
                 onClick={() => {
-                  removeFromCart(item.id)
+                  dispatch(removeFromCartRequested(item.id))
                 }}
               >
                 <Trash2Icon />

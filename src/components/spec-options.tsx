@@ -9,9 +9,15 @@ type SpecOptionsProps = {
   name: string
   options?: SpecOption[]
   loading?: boolean
+  onSelect?: (option: SpecOption) => void
 }
 
-export function SpecOptions({ name, options, loading }: SpecOptionsProps) {
+export function SpecOptions({
+  name,
+  options,
+  loading,
+  onSelect,
+}: SpecOptionsProps) {
   const [value, setValue] = useState("")
 
   const formatSpecPrice = (price: number) => {
@@ -26,8 +32,12 @@ export function SpecOptions({ name, options, loading }: SpecOptionsProps) {
     <RadioGroup
       name={name}
       value={value}
-      onValueChange={(value) => {
-        setValue(value)
+      onValueChange={(nextValue) => {
+        setValue(nextValue)
+        const option = options?.find((item) => item.value === nextValue)
+        if (option) {
+          onSelect?.(option)
+        }
       }}
       className="grid gap-2 sm:grid-cols-2"
     >

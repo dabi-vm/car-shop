@@ -1,39 +1,165 @@
 {
   "bodyColorOptions": [
-    { "value": "white", "label": "White", "price": 0 },
-    { "value": "black", "label": "Black", "price": 150 },
-    { "value": "silver", "label": "Silver", "price": 200 },
-    { "value": "gray", "label": "Gray", "price": 180 }
+    {
+      "value": "white",
+      "label": "White",
+      "price": 50,
+      "id": "uGRhrhSap44"
+    },
+    {
+      "value": "black",
+      "label": "Black",
+      "price": 150,
+      "id": "Eq1ZdYXZLiA"
+    },
+    {
+      "value": "silver",
+      "label": "Silver",
+      "price": 200,
+      "id": "d-5pE7wJJDs"
+    },
+    {
+      "value": "gray",
+      "label": "Gray",
+      "price": 180,
+      "id": "BaldlixgdFs"
+    }
   ],
   "paintTypeOptions": [
-    { "value": "gloss", "label": "Gloss", "price": 0 },
-    { "value": "matte", "label": "Matte", "price": 800 },
-    { "value": "metallic", "label": "Metallic", "price": 450 }
+    {
+      "value": "gloss",
+      "label": "Gloss",
+      "price": 50,
+      "id": "6PMa_6blNwc"
+    },
+    {
+      "value": "matte",
+      "label": "Matte",
+      "price": 800,
+      "id": "4ZA7tfA4mig"
+    },
+    {
+      "value": "metallic",
+      "label": "Metallic",
+      "price": 450,
+      "id": "ZSTPUUcQ-0M"
+    }
   ],
   "windowTypeOptions": [
-    { "value": "standard", "label": "Standard Glass", "price": 0 },
-    { "value": "acoustic", "label": "Acoustic Glass", "price": 250 },
-    { "value": "laminated", "label": "Laminated Safety", "price": 400 }
+    {
+      "value": "standard",
+      "label": "Standard Glass",
+      "price": 50,
+      "id": "64EKHhgFJ5c"
+    },
+    {
+      "value": "acoustic",
+      "label": "Acoustic Glass",
+      "price": 250,
+      "id": "lbJfQ38iIJo"
+    },
+    {
+      "value": "laminated",
+      "label": "Laminated Safety",
+      "price": 400,
+      "id": "I4PVuqmDaro"
+    }
   ],
   "windowTintOptions": [
-    { "value": "none", "label": "No Tint", "price": 0 },
-    { "value": "light", "label": "Light (70%)", "price": 120 },
-    { "value": "dark", "label": "Dark (20%)", "price": 220 }
+    {
+      "value": "none",
+      "label": "No Tint",
+      "price": 50,
+      "id": "BBuko8i5Z1k"
+    },
+    {
+      "value": "light",
+      "label": "Light (70%)",
+      "price": 120,
+      "id": "pC9b6q0pTtc"
+    },
+    {
+      "value": "dark",
+      "label": "Dark (20%)",
+      "price": 220,
+      "id": "Ybf4kTFTL2A"
+    }
   ],
   "wheelDesignOptions": [
-    { "value": "alloy-5-spoke", "label": "Alloy 5-Spoke", "price": 0 },
-    { "value": "alloy-mesh", "label": "Alloy Mesh", "price": 350 },
-    { "value": "multi-spoke", "label": "Multi-Spoke", "price": 500 }
+    {
+      "value": "alloy-5-spoke",
+      "label": "Alloy 5-Spoke",
+      "price": 50,
+      "id": "xjWCGqL6Fwc"
+    },
+    {
+      "value": "alloy-mesh",
+      "label": "Alloy Mesh",
+      "price": 350,
+      "id": "vOObuzL3iAQ"
+    },
+    {
+      "value": "multi-spoke",
+      "label": "Multi-Spoke",
+      "price": 500,
+      "id": "t16jwoLEwaA"
+    }
   ],
   "wheelSizeOptions": [
-    { "value": "16", "label": "16\"", "price": 0 },
-    { "value": "17", "label": "17\"", "price": 200 },
-    { "value": "18", "label": "18\"", "price": 400 }
+    {
+      "value": "16",
+      "label": "16\"",
+      "price": 50,
+      "id": "fnXbdkaGvc0"
+    },
+    {
+      "value": "17",
+      "label": "17\"",
+      "price": 200,
+      "id": "sPZ3gDBCOq4"
+    },
+    {
+      "value": "18",
+      "label": "18\"",
+      "price": 400,
+      "id": "9_ulysJEA7M"
+    }
   ],
   "wheelColorOptions": [
-    { "value": "silver", "label": "Silver", "price": 0 },
-    { "value": "black", "label": "Black", "price": 150 },
-    { "value": "white", "label": "White", "price": 180 }
+    {
+      "value": "silver",
+      "label": "Silver",
+      "price": 50,
+      "id": "BMg6WxRoXvc"
+    },
+    {
+      "value": "black",
+      "label": "Black",
+      "price": 150,
+      "id": "LLiMmukUFHo"
+    },
+    {
+      "value": "white",
+      "label": "White",
+      "price": 180,
+      "id": "5HWjPi5CHZQ"
+    }
   ],
-  "cart": []
+  "cart": [
+    {
+      "name": "wheelColor",
+      "value": "silver",
+      "label": "Silver",
+      "price": 50,
+      "id": "aX88jQmqYME"
+    },
+    {
+      "name": "bodyColor",
+      "value": "white",
+      "label": "White",
+      "price": 50,
+      "id": "QeF7atwAXJQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

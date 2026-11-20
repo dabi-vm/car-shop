@@ -3,15 +3,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import type { SpecOption } from "@/store/rtk-query/car-types"
 
 export type CartItem = {
-  id?: string | number
-  bodyColor: string
-  paintType: string
-  windowType: string
-  windowTint: string
-  wheelDesign: string
-  wheelSize: string
-  wheelColor: string
-  total: number
+  id: string
+  name: string
+  value: string
+  label: string
+  price: number
 }
 
 export const carApi = createApi({
@@ -44,11 +40,18 @@ export const carApi = createApi({
       query: () => "/cart",
       providesTags: ["Cart"],
     }),
-    addToCart: build.mutation<CartItem, Omit<CartItem, "id">>({
+    addToCart: build.mutation<CartItem, CartItem>({
       query: (item) => ({
         url: "/cart",
         method: "POST",
         body: item,
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+    removeFromCart: build.mutation<void, string>({
+      query: (id) => ({
+        url: `/cart/${encodeURIComponent(id)}`,
+        method: "DELETE",
       }),
       invalidatesTags: ["Cart"],
     }),
@@ -65,4 +68,5 @@ export const {
   useGetWheelColorOptionsQuery,
   useGetCartQuery,
   useAddToCartMutation,
+  useRemoveFromCartMutation,
 } = carApi

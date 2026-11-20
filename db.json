@@ -145,21 +145,6 @@
       "id": "5HWjPi5CHZQ"
     }
   ],
-  "cart": [
-    {
-      "name": "wheelColor",
-      "value": "silver",
-      "label": "Silver",
-      "price": 50,
-      "id": "aX88jQmqYME"
-    },
-    {
-      "name": "bodyColor",
-      "value": "white",
-      "label": "White",
-      "price": 50,
-      "id": "QeF7atwAXJQ"
-    }
-  ],
+  "cart": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

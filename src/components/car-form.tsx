@@ -1,7 +1,8 @@
 import { SpecOptions } from "@/components/spec-options"
 import { Typography } from "@/components/ui/typography"
+import { addToCart } from "@/store/cart/cart-thunks"
+import { useAppDispatch } from "@/store/hooks"
 import {
-  useAddToCartMutation,
   useGetBodyColorOptionsQuery,
   useGetCartQuery,
   useGetPaintTypeOptionsQuery,
@@ -10,13 +11,11 @@ import {
   useGetWheelSizeOptionsQuery,
   useGetWindowTintOptionsQuery,
   useGetWindowTypeOptionsQuery,
-  useRemoveFromCartMutation,
 } from "@/store/rtk-query/car-api"
 import type { SpecOption } from "@/store/rtk-query/car-types"
 
 export function CarForm() {
-  const [addToCart] = useAddToCartMutation()
-  const [removeFromCart] = useRemoveFromCartMutation()
+  const dispatch = useAppDispatch()
   const { data: cartItems = [] } = useGetCartQuery()
   const { data: bodyColorData, isLoading: bodyColorLoading } =
     useGetBodyColorOptionsQuery()
@@ -37,15 +36,12 @@ export function CarForm() {
     cartItems.find((item) => item.name === name)?.value ?? ""
 
   const handleSelect = (name: string, option: SpecOption) => {
-    const existingType = cartItems.find((item) => item.name === name)
-
-    if (existingType) {
-      removeFromCart(existingType.id)
-    }
-    addToCart({
-      name,
-      ...option,
-    })
+    dispatch(
+      addToCart({
+        name,
+        ...option,
+      }),
+    )
   }
 
   return (
